@@ -154,21 +154,6 @@
         backdrop-filter: blur(8px);
     }
 
-    .playlist-page.inline-playlist .playlist-inner .close-btn {
-        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTggMTgiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCI+PGRlZnM+PC9kZWZzPjxwYXRoIGQ9Ik0xLjIsMThDMC42LDE4LDAsMTcuNSwwLDE2LjhjMC0wLjQsMC4xLTAuNiwwLjQtMC44bDctN2wtNy03QzAuMSwxLjgsMCwxLjUsMCwxLjJDMCwwLjUsMC42LDAsMS4yLDBDMS41LDAsMS44LDAuMSwyLDAuMyBsNyw3bDctN0MxNi4yLDAuMSwxNi41LDAsMTYuOCwwQzE3LjQsMCwxOCwwLjUsMTgsMS4yYzAsMC4zLTAuMSwwLjYtMC40LDAuOGwtNyw3bDcsN2MwLjIsMC4yLDAuNCwwLjUsMC40LDAuOCBjMCwwLjctMC42LDEuMi0xLjIsMS4yYy0wLjMsMC0wLjYtMC4xLTAuOC0wLjNsLTctN2wtNyw3QzEuOCwxNy44LDEuNSwxOCwxLjIsMTh6IiBmaWxsPSIjOTk5OTk5Ij48L3BhdGg+PC9zdmc+');
-        background-size: 100%;
-        opacity: 1;
-        width: 12px;
-        height: 12px;
-        filter: drop-shadow(0px 0px 4px rgb(0 0 0 / 50%));
-        filter: drop-shadow(0px 0px 4px rgb(0 0 0 / 50%));
-    }
-
-    .playlist-page.inline-playlist .playlist-inner .close-btn:hover {
-        background-image: url('data:image/svg+xml;base64,PHN2ZyBpZD0iU3ZnanNTdmcxMDAxIiB3aWR0aD0iMjg4IiBoZWlnaHQ9IjI4OCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWxuczpzdmdqcz0iaHR0cDovL3N2Z2pzLmNvbS9zdmdqcyI+PGRlZnMgaWQ9IlN2Z2pzRGVmczEwMDIiPjwvZGVmcz48ZyBpZD0iU3ZnanNHMTAwOCI+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyODgiIGhlaWdodD0iMjg4IiB2aWV3Qm94PSIwIDAgMTggMTgiPjxwYXRoIGZpbGw9IiNmYTU4NmEiIGQ9Ik0xLjIsMThDMC42LDE4LDAsMTcuNSwwLDE2LjhjMC0wLjQsMC4xLTAuNiwwLjQtMC44bDctN2wtNy03QzAuMSwxLjgsMCwxLjUsMCwxLjJDMCwwLjUsMC42LDAsMS4yLDBDMS41LDAsMS44LDAuMSwyLDAuMyBsNyw3bDctN0MxNi4yLDAuMSwxNi41LDAsMTYuOCwwQzE3LjQsMCwxOCwwLjUsMTgsMS4yYzAsMC4zLTAuMSwwLjYtMC40LDAuOGwtNyw3bDcsN2MwLjIsMC4yLDAuNCwwLjUsMC40LDAuOCBjMCwwLjctMC42LDEuMi0xLjIsMS4yYy0wLjMsMC0wLjYtMC4xLTAuOC0wLjNsLTctN2wtNyw3QzEuOCwxNy44LDEuNSwxOCwxLjIsMTh6IiBjbGFzcz0iY29sb3I5OTkgc3ZnU2hhcGUiPjwvcGF0aD48L3N2Zz48L2c+PC9zdmc+');
-        transition-duration: 0.5s;
-    }
-
     #app-content > div.content-inner.playlist-page.inline-playlist > div > div.close-btn > svg {
         fill: transparent !important;
     }
@@ -417,6 +402,60 @@
     .window-controls > div.minmax {
         height: 12px;
         width: 12px;
+        background-color: grey;
+        border-radius: 50%;
+        margin: 0px;
+        -webkit-app-region: no-drag;
+        background-image: unset;
+        position: absolute;
+        right: 54px;
+        top: 50%;
+        transform: translate(0, -50%);
+        opacity: 0.3;
+        transition-duration: 0.2s;
+
+        &.restore {
+            background-image: unset !important;
+        }
+    }
+
+    .window-controls > div.minimize {
+        height: 12px;
+        width: 12px;
+        background-color: grey;
+        border-radius: 50%;
+        margin: 0px;
+        -webkit-app-region: no-drag;
+        background-image: unset;
+        margin-left: 10px;
+        position: absolute;
+        right: 34px;
+        top: 50%;
+        transform: translate(0, -50%);
+        opacity: 0.3;
+        transition-duration: 0.2s;
+    }
+
+    .window-controls > div.close {
+        height: 12px;
+        width: 12px;
+        background-color: grey;
+        border-radius: 50%;
+        margin: 0px;
+        -webkit-app-region: no-drag;
+        background-image: unset;
+        margin-left: 10px;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translate(0, -50%);
+        opacity: 0.3;
+        transition-duration: 0.2s;
+    }
+
+    .window-controls:hover > div.minmax {
+        height: 12px;
+        width: 12px;
         background-color: #00ca56;
         border-radius: 50%;
         margin: 0px;
@@ -426,13 +465,15 @@
         right: 54px;
         top: 50%;
         transform: translate(0, -50%);
+        opacity: 1;
+        transition-duration: 0.2s;
 
         &.restore {
             background-image: unset !important;
         }
     }
 
-    .window-controls > div.minimize {
+    .window-controls:hover > div.minimize {
         height: 12px;
         width: 12px;
         background-color: rgb(255, 189, 76);
@@ -445,9 +486,11 @@
         right: 34px;
         top: 50%;
         transform: translate(0, -50%);
+        opacity: 1;
+        transition-duration: 0.2s;
     }
 
-    .window-controls > div.close {
+    .window-controls:hover > div.close {
         height: 12px;
         width: 12px;
         background-color: rgb(255, 92, 92);
@@ -460,6 +503,8 @@
         right: 15px;
         top: 50%;
         transform: translate(0, -50%);
+        opacity: 1;
+        transition-duration: 0.2s;
     }
 
     .window-controls > div.minimize:hover {
@@ -474,6 +519,58 @@
 
     .window-controls > div.close:hover {
         background-color: rgb(199, 88, 76);
+        transition-duration: 0.2s;
+    }
+}
+
+#app {
+    .addtoplaylist-panel .modal-window {
+        background-color: rgba(38, 38, 38, 0.5);
+        backdrop-filter: blur(8px);
+    }
+
+    .modal-fullscreen .modal-window {
+        background-color: rgba(38, 38, 38, 0.5);
+        backdrop-filter: blur(8px);
+    }
+
+    .modal-content {
+        background-color: transparent;
+    }
+
+    .modal-header {
+        background-color: rgba(38, 38, 38, 0.5);
+    }
+
+    .modal-lowercontent {
+        background-color: rgba(38, 38, 38, 0.5);
+    }
+
+    .md-select option {
+        background-color: rgba(38, 38, 38, 0.5);
+    }
+
+    .close-btn {
+        height: 12px;
+        width: 12px;
+        background-color: grey;
+        border-radius: 50%;
+        transform: translate(0, -50%);
+        opacity: 0.3;
+        transition-duration: 0.2s;
+        top: 20px;
+        background-image: unset;
+        right: 10px;
+    }
+
+    .close-btn:hover {
+        height: 12px;
+        width: 12px;
+        background-color: rgb(255, 92, 92);
+        border-radius: 50%;
+        top: 20px;
+        transform: translate(0, -50%);
+        opacity: 1;
         transition-duration: 0.2s;
     }
 }
@@ -669,4 +766,12 @@
 #__bv_tooltip_61__ > div.tooltip-inner {
     background-color: rgba(38, 38, 38, 0.75);
     backdrop-filter: blur(8px);
+}
+
+input {
+    background-color: rgba(38, 38, 38, 0.5);
+}
+
+input[type="number"] {
+    background-color: rgba(38, 38, 38, 0.5);
 }
